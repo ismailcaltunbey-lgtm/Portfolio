@@ -107,7 +107,6 @@
             color: var(--accent);
         }
 
-        /* Language Switcher Button Style */
         .lang-switcher {
             display: flex;
             background: rgba(255, 255, 255, 0.05);
@@ -219,7 +218,7 @@
             color: var(--bg-dark);
         }
 
-        /* --- Sections Common --- */
+        /* --- Sections --- */
         section {
             padding: 100px 0;
         }
@@ -249,7 +248,7 @@
             transition: var(--transition);
         }
 
-        /* --- About Section & Skills Fix --- */
+        /* --- About & Skills --- */
         .about-grid {
             display: grid;
             grid-template-columns: 3fr 2fr;
@@ -258,8 +257,8 @@
 
         .skills-tags {
             display: flex;
-            flex-wrap: wrap; /* Kutuların taşmasını önler, alt satıra atar */
-            gap: 12px; /* Kutular arası boşluk */
+            flex-wrap: wrap;
+            gap: 12px;
             margin-top: 20px;
         }
 
@@ -273,7 +272,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            white-space: nowrap; /* Metnin bölünmesini engeller */
+            white-space: nowrap;
             transition: var(--transition);
         }
 
@@ -333,7 +332,13 @@
             gap: 10px;
         }
 
-        /* --- Contact --- */
+        /* --- Multilingual Display --- */
+        [data-lang] { display: none; }
+        body.lang-en [data-lang="en"] { display: inline-block; }
+        body.lang-tr [data-lang="tr"] { display: inline-block; }
+        body.lang-en p[data-lang="en"], body.lang-en div[data-lang="en"], body.lang-en h3[data-lang="en"] { display: block; }
+        body.lang-tr p[data-lang="tr"], body.lang-tr div[data-lang="tr"], body.lang-tr h3[data-lang="tr"] { display: block; }
+
         .contact-wrapper {
             display: flex;
             justify-content: center;
@@ -355,18 +360,6 @@
             margin-bottom: 10px;
         }
 
-        .contact-item:hover {
-            color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        /* --- Multilingual Display --- */
-        [data-lang] { display: none; }
-        body.lang-en [data-lang="en"] { display: inline-block; }
-        body.lang-tr [data-lang="tr"] { display: inline-block; }
-        body.lang-en p[data-lang="en"], body.lang-en div[data-lang="en"] { display: block; }
-        body.lang-tr p[data-lang="tr"], body.lang-tr div[data-lang="tr"] { display: block; }
-
         footer {
             text-align: center;
             padding: 40px 0;
@@ -383,7 +376,7 @@
         }
     </style>
 </head>
-<body class="lang-tr"> <!-- Varsayılan Dil Türkçe -->
+<body class="lang-tr"> 
 
     <div class="bg-glow"></div>
 
@@ -440,7 +433,7 @@
                     <p data-lang="tr">Merhaba! Ben, donanımın kodla buluştuğu dünyaya derin ilgi duyan 1. sınıf öğrencisiyim. Temel hedefim <strong>Gömülü Sistemler</strong> konusunda uzmanlaşmak.</p>
                     <br>
                     <p data-lang="en">I am currently developing applications with <strong>C#</strong> and exploring the depth of <strong>C++</strong> for low-level programming.</p>
-                    <p data-lang="tr">Şu anda <strong>C#</strong> ile uygulamalar geliştiriyor ve düşük seviyeli programlama için <strong>C++</strong>'ın derinliklerini keşfediyorum.</p>
+                    <p data-lang="tr">Şu anda <strong>C#</strong> ile uygulamalar geliştiriyor ve düşük seviyeli programlama için <strong>C++</strong>'ın derinliklerini keşbeyorum.</p>
                 </div>
                 <div class="skills-box card">
                     <h3 data-lang="en">Technical Toolbox</h3><h3 data-lang="tr">Teknik Yetenekler</h3>
@@ -461,10 +454,15 @@
         <div class="container">
             <h2 class="section-title">02. <span data-lang="en">Projects</span><span data-lang="tr">Projeler</span></h2>
             <div class="project-grid">
+                <!-- PROJECT 1 -->
                 <div class="project-card card">
                     <div>
                         <div class="project-icon"><i class="fas fa-terminal"></i></div>
-                        <h3>Student Management System</h3>
+                        <!-- BU KISIM DÜZELTİLDİ -->
+                        <h3>
+                            <span data-lang="en">Student Management System</span>
+                            <span data-lang="tr">Öğrenci Yönetim Sistemi</span>
+                        </h3>
                         <p data-lang="en">A console-based system designed in C# to handle database operations for student information.</p>
                         <p data-lang="tr">Öğrenci bilgilerini ve veritabanı işlemlerini yönetmek için C# ile tasarlanmış konsol tabanlı bir sistem.</p>
                         <div class="project-tech">C# | .NET</div>
@@ -474,6 +472,7 @@
                     </a>
                 </div>
                 
+                <!-- PROJECT 2 -->
                 <div class="project-card card">
                     <div>
                         <div class="project-icon"><i class="fas fa-microchip"></i></div>
@@ -497,8 +496,6 @@
                 <h2 style="color: var(--accent); margin-bottom: 20px;">
                     <span data-lang="en">Get In Touch</span><span data-lang="tr">İletişime Geç</span>
                 </h2>
-                <p data-lang="en">I'm always open to discussing new projects or embedded opportunities.</p>
-                <p data-lang="tr">Yeni projeler veya gömülü sistem fırsatları hakkında konuşmaya her zaman açığım.</p>
                 <div class="contact-wrapper">
                     <a href="mailto:ismailcaltunbey@gmail.com" class="contact-item">
                         <i class="fas fa-envelope"></i>
